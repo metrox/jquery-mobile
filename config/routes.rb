@@ -2,7 +2,6 @@ Projekt::Application.routes.draw do
   get "home/index"
 
   resources :posts
-
   resources :friendlists
   
   #COMMENTS
@@ -17,8 +16,8 @@ Projekt::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
 
   match 'login' => 'sessions#new', :as => :login
-  resources :sessions
 
+  resources :sessions
   resources :users
 
   root :to => "home#index"
