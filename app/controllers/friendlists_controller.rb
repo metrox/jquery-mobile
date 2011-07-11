@@ -43,7 +43,7 @@ class FriendlistsController < ApplicationController
     friendlista[:id_user] = current_user.id
     friendlista[:id_friend] = params[:id_friend]
     respond_to do |format|
-      if friendlist.save
+      if friendlista.save
         #format.html { redirect_to(@friendlist, :notice => 'Friendlist was successfully created.') }
         format.html { redirect_to(user_path(params[:id_friend])) }
         format.xml  { render :xml => @friendlist, :status => :created, :location => @friendlist }
