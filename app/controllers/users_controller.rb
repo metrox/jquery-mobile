@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new
 
     @post = Post.new
-
+    @friendlist = Friendlist.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @post }
