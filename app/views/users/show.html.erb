@@ -35,7 +35,7 @@ Witaj panie: <%= current_user.username %><br />
   
    <!-- lista znajomych -->
    <% friends_profil = '0' %>
-   <% friends = friend_finder(@friendlist, @profil.id) %>
+   <% friends = friend_finder(@my_friendlist, @profil.id) %>
    <% friends.each do |friend| %>
      <br /> <!-- link do profilu -->
     <%= link_to "#{friend.username}", user_path(friend.id) %>
