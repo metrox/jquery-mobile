@@ -29,8 +29,7 @@ class UsersController < ApplicationController
     @id = params[:id]
     @posts = Post.where(:id_owner => @id)
     @author = User.find(@id)
-    @my_friendlist = Friendlist.where(:id_friend == @profil.id || :id_user == 
-@profil.id)
+    @my_friendlist = Friendlist.where(:id_friend == @profil.id || :id_user == @profil.id)
     
     respond_to do |format|
       format.html # show.html.erb
