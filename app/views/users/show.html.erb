@@ -49,6 +49,6 @@ Witaj panie: <%= current_user.username %><br />
   
   <% if (friends_profil == '0') && (@profil.id != current_user.id) %>
    <div class="add_friend">
-     <%= render 'add_to_friend' %>
+     <%= render 'add_friend' %>
    </div>
   <% end %>
