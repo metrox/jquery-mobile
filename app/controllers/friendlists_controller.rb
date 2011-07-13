@@ -40,12 +40,12 @@ class FriendlistsController < ApplicationController
   # POST /friendlists.xml
   def create
     @friendlist = Friendlist.new(params[:friendlist])
-   # @friendlist[:id_user] = current_user_id
-   # @friendlist[:id_friend] = params[:id_friend]
+   @friendlist[:id_user] = params[:id_user]
+   @friendlist[:id_friend] = params[:id_friend]
     respond_to do |format|
       if @friendlist.save
-        # format.html { redirect_to(@friendlist, :notice => 'Friendlist was successfully created.') }
-        format.html { redirect_to(user_path(params[:id_friend])) }
+         format.html { redirect_to(@friendlist, :notice => 'Friendlist was successfully created.') }
+        #format.html { redirect_to(user_path(params[:id_friend])) }
         format.xml  { render :xml => @friendlist, :status => :created, :location => @friendlist }
       else
         format.html { render :action => "new" }
