@@ -39,10 +39,10 @@ class FriendlistsController < ApplicationController
   # POST /friendlists
   # POST /friendlists.xml
   def create
-    @friendlist = Friendlist.new(params[:friendlist])
-    # @friendlist = Friendlist.new
-   @friendlist[:id_user] = params[:id_user]
-   @friendlist[:id_friend] = params[:id_friend]
+    #@friendlist = Friendlist.new(params[:friendlist])
+    @friendlist = Friendlist.new(params[:id_user], params[:id_friend])
+   #@friendlist[:id_user] = params[:id_user]
+   #@friendlist[:id_friend] = params[:id_friend]
   
     respond_to do |format|
       if @friendlist.save
