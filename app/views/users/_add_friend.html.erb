@@ -1,5 +1,5 @@
 <%= form_for Friendlist.new do |f| %>
-    <%= hidden_field_tag(:id_friend, @profil.id) %>
-    <%= hidden_field_tag(:id_user, current_user.id) %>
+    <%= hidden_field_tag(id_friend, @profil.id) %>
+    <%= hidden_field_tag(id_user, current_user.id) %>
     <%= f.submit %>
 <% end %>
