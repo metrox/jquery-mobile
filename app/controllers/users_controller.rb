@@ -30,8 +30,10 @@ class UsersController < ApplicationController
     @posts = Post.where(:id_owner => @id)
     @author = User.find(@id)
     @my_friendlist = Friendlist.where(:id_friend == @profil.id || :id_user == @profil.id)
-    @friendlist = Friendlist.new 
+
+    @add_friend = Friendlist.new 
     @post = Post.new    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
