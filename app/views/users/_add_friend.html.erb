@@ -1,5 +1,5 @@
 <%= form_for @add_friend do |f| %>
     <%= hidden_field_tag(:id_friend, @profil.id) %>
     <%= hidden_field_tag(:id_user, current_user.id) %>
-    <%= f.submit %>
+    <%= submit_tag 'Add to friends' %>
 <% end %>
